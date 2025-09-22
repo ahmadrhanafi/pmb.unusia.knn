@@ -21,19 +21,19 @@ $gambar0 = "avatar.jpg";
 
 $nama_pengujian = "";
 $id_user = "";
-$p1 = "";
-$p2 = "";
-$p3 = "";
-$p4 = "";
-$p5 = "";
-$p6 = "";
-$p7 = "";
-$p8 = "";
-$p9 = "";
-$p10 = "";
-$p11 = "";
-$p12 = "";
-$jumlah_persediaan = "";
+$jalur_pendaftaran = "";
+$gelombang = "";
+$sistem_kuliah = "";
+$jenis_kelamin = "";
+$nilai_lulusan = "";
+$tahun_lulus = "";
+$jenjang_pendidikan = "";
+$jurusan_sekolah = "";
+$tanggal_daftar = "";
+$prodi_diterima = "";
+$jenis_institusi = "";
+$provinsi_institusi = "";
+$jumlah = "";
 $harga_permeter = "";
 $total_pembelian = "";
 $rekapitulasi = "";
@@ -47,22 +47,22 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 	$d = getField($conn, $sql);
 	$id_pengujian = $d["id_pengujian"];
 	$id_pengujian0 = $d["id_pengujian"];
-	$id_toko = $d["id_toko"];
+	$id_tahun = $d["id_tahun"];
 	$nama_pengujian = $d["nama_pengujian"];
 	$id_user = $d["id_user"];
-	$p1 = $d["p1"];
-	$p2 = $d["p2"];
-	$p3 = $d["p3"];
-	$p4 = $d["p4"];
-	$p5 = $d["p5"];
-	$p6 = $d["p6"];
-	$p7 = $d["p7"];
-	$p8 = $d["p8"];
-	$p9 = $d["p9"];
-	$p10 = $d["p10"];
-	$p11 = $d["p11"];
-	$p12 = $d["p12"];
-	$jumlah_persediaan = $d["jumlah_persediaan"];
+	$jalur_pendaftaran = $d["jalur_pendaftaran"];
+	$gelombang = $d["gelombang"];
+	$sistem_kuliah = $d["sistem_kuliah"];
+	$jenis_kelamin = $d["jenis_kelamin"];
+	$nilai_lulusan = $d["nilai_lulusan"];
+	$tahun_lulus = $d["tahun_lulus"];
+	$jenjang_pendidikan = $d["jenjang_pendidikan"];
+	$jurusan_sekolah = $d["jurusan_sekolah"];
+	$tanggal_daftar = $d["tanggal_daftar"];
+	$prodi_diterima = $d["prodi_diterima"];
+	$jenis_institusi = $d["jenis_institusi"];
+	$provinsi_institusi = $d["provinsi_institusi"];
+	$jumlah = $d["jumlah"];
 	$rekapitulasi = $d["rekapitulasi"];
 	$kategori = $d["kategori"];
 	$keterangan = $d["keterangan"];
@@ -81,157 +81,159 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 	});
 </script>
 
-
-<div id="accordion">
-	<h3>Masukan Data pengujian</h3>
-	<div>
+<div class="container" style="margin-top: 80px;">
+	<div id="accordion">
+		<h3 class="mb-4">Masukan Data Pengujian</h3>
 
 		<form action="" method="post" enctype="multipart/form-data">
-			<table class="table table-striped">
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<tr>
+						<td>
+							<label for="id_tahun">Pilih Tahun</label>
+						<td>:
+						<td colspan="5">
+							<select name="id_tahun" required class="form-control" id="id_tahun">
+								<option value="">-- Pilih Tahun --</option>
+								<?php
+								$id_tahun = isset($_GET['id_tahun']) ? $_GET['id_tahun'] : '';
+								echo "<option value='$id_tahun' ";
+								echo ">$id_tahun</option>";
 
-				<tr>
-					<td>
-						<label for=" id_toko">Pilih Toko</label>
-					<td>:
-					<td colspan="5"><select name="id_toko" required class="form-control" id="id_toko">
-							<?php
-							$id_toko = isset($_GET['id_toko']) ? $_GET['id_toko'] : '';
-							echo "<option value='$id_toko' ";
-							echo ">$id_toko</option>";
-
-							$sql = "select * from `$tbtoko`";
-							$arr = getData($conn, $sql);
-							foreach ($arr as $d) {
-								$id_toko0 = $d["id_toko"];
-								$nama_toko = $d["nama_toko"];
-								echo "<option value='$id_toko0' ";
-								if ($id_toko0 == $id_toko) {
-									echo "selected";
+								$sql = "select * from `$tbtahun`";
+								$arr = getData($conn, $sql);
+								foreach ($arr as $d) {
+									$id_tahun0 = $d["id_tahun"];
+									$nama_tahun = $d["nama_tahun"];
+									echo "<option value='$id_tahun0' ";
+									if ($id_tahun0 == $id_tahun) {
+										echo "selected";
+									}
+									echo ">$nama_tahun ($id_tahun0)</option>";
 								}
-								echo ">$nama_toko ($id_toko0)</option>";
-							}
-							?>
-						</select></td>
-				</tr>
-				<tr>
-					<td><label for="nama_pengujian">Nama Pengujian</label>
-					<td>:
-					<td colspan="5"><input required name="nama_pengujian" type="text" class="form-control" id="nama_pengujian" value="<?php echo $nama_pengujian; ?>" size="25" /></td>
-				</tr>
+								?>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="nama_pengujian">Nama Pengujian</label>
+						<td>:
+						<td colspan="5"><input required name="nama_pengujian" type="text" class="form-control" id="nama_pengujian" value="<?php echo $nama_pengujian; ?>" size="25" /></td>
+					</tr>
 
+					<tr>
+						<td height="24"><label for="jalur_pendaftaran"><?php echo $kp1; ?></label>
+						<td>:
+						<td><input required name="jalur_pendaftaran" type="number" class="form-control" id="jalur_pendaftaran" value="<?php echo $jalur_pendaftaran; ?>" size="25" />
+						</td>
+						<td height="24"><label for="gelombang"><?php echo $kp2; ?></label>
+						<td>:
+						<td><input required name="gelombang" type="number" class="form-control" id="gelombang" value="<?php echo $gelombang; ?>" size="25" />
+						</td>
+					</tr>
 
-				<tr>
-					<td height="24"><label for="p1"><?php echo $kp1; ?></label>
-					<td>:
-					<td><input required name="p1" type="text" class="form-control" id="p1" value="<?php echo $p1; ?>" size="25" />
-					</td>
-					<td height="24"><label for="p2"><?php echo $kp2; ?></label>
-					<td>:
-					<td><input required name="p2" type="text" class="form-control" id="p2" value="<?php echo $p2; ?>" size="25" />
-					</td>
-				</tr>
+					<tr>
+						<td height="24"><label for="sistem_kuliah"><?php echo $kp3; ?></label>
+						<td>:
+						<td><input required name="sistem_kuliah" type="number" class="form-control" id="sistem_kuliah" value="<?php echo $sistem_kuliah; ?>" size="25" />
+						</td>
+						<td height="24"><label for="jenis_kelamin"><?php echo $kp4; ?></label>
+						<td>:
+						<td><input required name="jenis_kelamin" type="number" class="form-control" id="jenis_kelamin" value="<?php echo $jenis_kelamin; ?>" size="25" />
+						</td>
+					</tr>
 
-				<tr>
-					<td height="24"><label for="p3"><?php echo $kp3; ?></label>
-					<td>:
-					<td><input required name="p3" type="text" class="form-control" id="p3" value="<?php echo $p3; ?>" size="25" />
-					</td>
-					<td height="24"><label for="p4"><?php echo $kp4; ?></label>
-					<td>:
-					<td><input required name="p4" type="text" class="form-control" id="p4" value="<?php echo $p4; ?>" size="25" />
-					</td>
-				</tr>
+					<tr>
+						<td height="24"><label for="nilai_lulusan"><?php echo $kp5; ?></label>
+						<td>:
+						<td><input required name="nilai_lulusan" type="number" class="form-control" id="nilai_lulusan" value="<?php echo $nilai_lulusan; ?>" size="25" />
+						</td>
+						<td height="24"><label for="tahun_lulus"><?php echo $kp6; ?></label>
+						<td>:
+						<td><input required name="tahun_lulus" type="number" class="form-control" id="tahun_lulus" value="<?php echo $tahun_lulus; ?>" size="25" />
+						</td>
+					</tr>
 
-				<tr>
-					<td height="24"><label for="p5"><?php echo $kp5; ?></label>
-					<td>:
-					<td><input required name="p5" type="text" class="form-control" id="p5" value="<?php echo $p5; ?>" size="25" />
-					</td>
-					<td height="24"><label for="p6"><?php echo $kp6; ?></label>
-					<td>:
-					<td><input required name="p6" type="text" class="form-control" id="p6" value="<?php echo $p6; ?>" size="25" />
-					</td>
-				</tr>
+					<tr>
+						<td height="24"><label for="jenjang_pendidikan"><?php echo $kp7; ?></label>
+						<td>:
+						<td><input required name="jenjang_pendidikan" type="number" class="form-control" id="jenjang_pendidikan" value="<?php echo $jenjang_pendidikan; ?>" size="25" />
+						</td>
+						<td height="24"><label for="jurusan_sekolah"><?php echo $kp8; ?></label>
+						<td>:
+						<td><input required name="jurusan_sekolah" type="number" class="form-control" id="jurusan_sekolah" value="<?php echo $jurusan_sekolah; ?>" size="25" />
+						</td>
+					</tr>
 
-				<tr>
-					<td height="24"><label for="p7"><?php echo $kp7; ?></label>
-					<td>:
-					<td><input required name="p7" type="text" class="form-control" id="p7" value="<?php echo $p7; ?>" size="25" />
-					</td>
-					<td height="24"><label for="p8"><?php echo $kp8; ?></label>
-					<td>:
-					<td><input required name="p8" type="text" class="form-control" id="p8" value="<?php echo $p8; ?>" size="25" />
-					</td>
-				</tr>
+					<tr>
+						<td height="24"><label for="tanggal_daftar"><?php echo $kp9; ?></label>
+						<td>:
+						<td><input required name="tanggal_daftar" type="number" class="form-control" id="tanggal_daftar" value="<?php echo $tanggal_daftar; ?>" size="25" />
+						</td>
+						<td height="24"><label for="prodi_diterima"><?php echo $kp10; ?></label>
+						<td>:
+						<td><input required name="prodi_diterima" type="number" class="form-control" id="prodi_diterima" value="<?php echo $prodi_diterima; ?>" size="25" />
+						</td>
+					</tr>
 
-				<tr>
-					<td height="24"><label for="p9"><?php echo $kp9; ?></label>
-					<td>:
-					<td><input required name="p9" type="text" class="form-control" id="p9" value="<?php echo $p9; ?>" size="25" />
-					</td>
-					<td height="24"><label for="p10"><?php echo $kp10; ?></label>
-					<td>:
-					<td><input required name="p10" type="text" class="form-control" id="p10" value="<?php echo $p10; ?>" size="25" />
-					</td>
-				</tr>
+					<tr>
+						<td height="24"><label for="jenis_institusi"><?php echo $kp11; ?></label>
+						<td>:
+						<td><input required name="jenis_institusi" type="number" class="form-control" id="jenis_institusi" value="<?php echo $jenis_institusi; ?>" size="25" />
+						</td>
+						<td height="24"><label for="provinsi_institusi"><?php echo $kp12; ?></label>
+						<td>:
+						<td><input required name="provinsi_institusi" type="number" class="form-control" id="provinsi_institusi" value="<?php echo $provinsi_institusi; ?>" size="25" />
+						</td>
+					</tr>
 
-				<tr>
-					<td height="24"><label for="p11"><?php echo $kp11; ?></label>
-					<td>:
-					<td><input required name="p11" type="text" class="form-control" id="p11" value="<?php echo $p11; ?>" size="25" />
-					</td>
-					<td height="24"><label for="p12"><?php echo $kp12; ?></label>
-					<td>:
-					<td><input required name="p12" type="text" class="form-control" id="p12" value="<?php echo $p12; ?>" size="25" />
-					</td>
-				</tr>
+					<tr>
+						<td><label for="keterangan">Keterangan</label>
+						<td>:
+						<td colspan="5">
+							<textarea name="keterangan" class="form-control" cols="55" rows="2"><?php echo $keterangan; ?></textarea>
+						</td>
+					</tr>
 
-
-
-
-				<tr>
-					<td><label for="keterangan">Keterangan</label>
-					<td>:
-					<td colspan="5">
-						<textarea name="keterangan" class="form-control" cols="55" rows="2"><?php echo $keterangan; ?></textarea>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-					<td>
-					<td colspan="2">
-						<input name="Simpan" type="submit" id="Simpan" value="Simpan" />
-						<input name="pro" type="hidden" id="pro" value="<?php echo $pro; ?>" />
-
-						<input name="id_pengujian" type="hidden" id="id_pengujian" value="<?php echo $id_pengujian; ?>" />
-						<input name="id_pengujian0" type="hidden" id="id_pengujian0" value="<?php echo $id_pengujian0; ?>" />
-						<a href="?mnu=pengujian"><input name="Batal" type="button" id="Batal" value="Batal" /></a>
-					</td>
-				</tr>
-			</table>
+					<tr>
+						<td>
+						<td>
+						<td>
+						<td>
+						<td>
+						<td colspan="2" class="float-right d-flex justify-content-end gap-2">
+							<input name="Simpan" type="submit" id="Simpan" value="Simpan" class="btn btn-primary" />
+							<input name="pro" type="hidden" id="pro" value="<?php echo $pro; ?>" />
+							<input name="id_pengujian" type="hidden" id="id_pengujian" value="<?php echo $id_pengujian; ?>" />
+							<input name="id_pengujian0" type="hidden" id="id_pengujian0" value="<?php echo $id_pengujian0; ?>" />
+							<a href="?mnu=pengujian"><input name="Batal" type="button" id="Batal" value="Batal" class="btn btn-danger" /></a>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</form>
 		<br />
 	</div>
+</div>
 
+<?php
+$sqlc = "select distinct(`id_tahun`) from `$tbpengujian` order by `id_tahun` asc";
+$jumc = getJum($conn, $sqlc);
+if ($jumc < 1) {
+	echo "<h1>Maaf, data pengujian belum tersedia ...</h1>";
+}
+$arrc = getData($conn, $sqlc);
+foreach ($arrc as $dc) {
+	$id_tahun = $dc["id_tahun"];
+?>
 
+	<div class="container">
+		<h3>Data Pengujian Berdasarkan Tahun : <?php echo getTahun($conn, $id_tahun) . "$id_tahun" ?></h3>
 
-	<?php
-	$sqlc = "select distinct(`id_toko`) from `$tbpengujian` order by `id_toko` asc";
-	$jumc = getJum($conn, $sqlc);
-	if ($jumc < 1) {
-		echo "<h1>Maaf data pengujian belum tersedia</h1>";
-	}
-	$arrc = getData($conn, $sqlc);
-	foreach ($arrc as $dc) {
-		$id_toko = $dc["id_toko"];
-	?>
-		<h3>Data Pengujian Toko <?php echo getToko($conn, $id_toko) . "|$id_toko" ?>:</h3>
-		<div>
+		| <img src='ypathicon/print.png' title='PRINT' OnClick="PRINT('<?php echo $id_tahun; ?>')"> |
+		<br>
 
-			| <img src='ypathicon/print.png' title='PRINT' OnClick="PRINT('<?php echo $id_toko; ?>')"> |
-			<br>
-
+		<div class="table-responsive">
 			<table class="table table-striped">
 				<tr bgcolor="#cccccc">
 					<th width="3%">No</td>
@@ -249,10 +251,11 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 					<th width="5%"><?php echo $ks11; ?></td>
 					<th width="5%"><?php echo $ks12; ?></td>
 					<th width="10%">Kategori</td>
-					<th width="5%">Menu</td>
+					<th width="5%">Aksi</td>
 				</tr>
+
 				<?php
-				$sql = "select * from `$tbpengujian` where  `id_toko`='$id_toko' order by `kategori` asc";
+				$sql = "select * from `$tbpengujian` where  `id_tahun`='$id_tahun' order by `kategori` asc";
 				$jum = getJum($conn, $sql);
 				if ($jum > 0) {
 					//--------------------------------------------------------------------------------------------
@@ -271,25 +274,24 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 					$arr = getData($conn, $sql2);
 					foreach ($arr as $d) {
 						$id_pengujian = $d["id_pengujian"];
-
 						$id_user = $d["id_user"];
 						$tanggal = WKTP($d["tanggal"]);
 						$jam = $d["jam"];
 						$nama_pengujian = $d["nama_pengujian"];
 						$nama_user = getUser($conn, $d["id_user"]);
-						$p1 = $d["p1"];
-						$p2 = $d["p2"];
-						$p3 = $d["p3"];
-						$p4 = $d["p4"];
-						$p5 = $d["p5"];
-						$p6 = $d["p6"];
-						$p7 = $d["p7"];
-						$p8 = $d["p8"];
-						$p9 = $d["p9"];
-						$p10 = $d["p10"];
-						$p11 = $d["p11"];
-						$p12 = $d["p12"];
-						$jumlah_persediaan = $d["jumlah_persediaan"];
+						$jalur_pendaftaran = $d["jalur_pendaftaran"];
+						$gelombang = $d["gelombang"];
+						$sistem_kuliah = $d["sistem_kuliah"];
+						$jenis_kelamin = $d["jenis_kelamin"];
+						$nilai_lulusan = $d["nilai_lulusan"];
+						$tahun_lulus = $d["tahun_lulus"];
+						$jenjang_pendidikan = $d["jenjang_pendidikan"];
+						$jurusan_sekolah = $d["jurusan_sekolah"];
+						$tanggal_daftar = $d["tanggal_daftar"];
+						$prodi_diterima = $d["prodi_diterima"];
+						$jumlah = $d["jumlah"];
+						$jenis_institusi = $d["jenis_institusi"];
+						$provinsi_institusi = $d["provinsi_institusi"];
 						$rekapitulasi = $d["rekapitulasi"];
 						$kategori = $d["kategori"];
 						$keterangan = $d["keterangan"];
@@ -300,195 +302,196 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 						}
 						echo "<tr bgcolor='$color'>
 				<td>$no</td>
-		<td><small><i>$nama_pengujian, $tanggal $jam Wib</small></i></td>
-				<td>$p1</td>
-				<td>$p2</td>
-				<td>$p3</td>
-				<td>$p4</td>
-				<td>$p5</td>
-				<td>$p6</td>
-				<td>$p7</td>
-				<td>$p8</td>
-				<td>$p9</td>
-				<td>$p10</td>
-				<td>$p11</td>
-				<td>$p12</td>
+				<td><small><i>$nama_pengujian, $tanggal $jam Wib</small></i></td>
+				<td>$jalur_pendaftaran</td>
+				<td>$gelombang</td>
+				<td>$sistem_kuliah</td>
+				<td>$jenis_kelamin</td>
+				<td>$nilai_lulusan</td>
+				<td>$tahun_lulus</td>
+				<td>$jenjang_pendidikan</td>
+				<td>$jurusan_sekolah</td>
+				<td>$tanggal_daftar</td>
+				<td>$prodi_diterima</td>
+				<td>$jenis_institusi</td>
+				<td>$provinsi_institusi</td>
 				<td>$kategori</td>
 				<td><div align='center'>
-<a href='?mnu=knn&id=$id_pengujian'><img src='ypathicon/xls.png' title='Proses KNN $nama_pengujian'></a><br>
-<a href='?mnu=pengujian&pro=ubah&kode=$id_pengujian'><img src='ypathicon/ub.png' title='ubah'></a>
-<a href='?mnu=pengujian&pro=hapus&kode=$id_pengujian&nama_pengujian=$nama_pengujian'><img src='ypathicon/ha.png' title='hapus' 
-onClick='return confirm(\"Apakah Anda benar-benar akan menghapus data \"$nama_pengujian\" pada data id_pengujian ?..\")'></a></div></td>
+					<a href='?mnu=knn&id=$id_pengujian'><img src='ypathicon/xls.png' title='Proses KNN $nama_pengujian'></a><br>
+					<a href='?mnu=pengujian&pro=ubah&kode=$id_pengujian'><img src='ypathicon/ub.png' title='ubah'></a>
+					<a href='?mnu=pengujian&pro=hapus&kode=$id_pengujian&nama_pengujian=$nama_pengujian'><img src='ypathicon/ha.png' title='hapus' 
+					onClick='return confirm(\"Apakah Anda benar-benar akan menghapus data \"$nama_pengujian\" pada data id_pengujian ?..\")'></a></div></td>
 				</tr>";
 
 						$no++;
 					} //for dalam
 				} //if
 				else {
-					echo "<tr><td colspan='6'><blink>Maaf, Data pengujian belum tersedia...</blink></td></tr>";
+					echo "<tr><td colspan='6'><blink>Maaf, data pengujian belum tersedia ...</blink></td></tr>";
 				}
 				?>
 			</table>
-
-		<?php
-		$jmldata = $jum;
-		if ($jmldata > 0) {
-			if ($batas < 1) {
-				$batas = 1;
-			}
-			$jmlhal  = ceil($jmldata / $batas);
-			echo "<div class=paging>";
-			if ($page > 1) {
-				$prev = $page - 1;
-				echo "<span class=prevnext><a href='$_SERVER[PHP_SELF]?page=$prev&mnu=pengujian'>« Prev</a></span> ";
-			} else {
-				echo "<span class=disabled>« Prev</span> ";
-			}
-
-			for ($i = 1; $i <= $jmlhal; $i++)
-				if ($i != $page) {
-					echo "<a href='$_SERVER[PHP_SELF]?page=$i&mnu=pengujian'>$i</a> ";
-				} else {
-					echo " <span class=current>$i</span> ";
-				}
-
-			if ($page < $jmlhal) {
-				$next = $page + 1;
-				echo "<span class=prevnext><a href='$_SERVER[PHP_SELF]?page=$next&mnu=pengujian'>Next »</a></span>";
-			} else {
-				echo "<span class=disabled>Next »</span>";
-			}
-			echo "</div>";
-		} //if jmldata
-
-		$jmldata = $jum;
-		echo "<p align=center>Total data <b>$jmldata</b> item</p>";
-
-		echo "</div>";
-	} //for atas
-		?>
-
-
 		</div>
 
-		<?php
-		if (isset($_POST["Simpan"])) {
-			$pro = strip_tags($_POST["pro"]);
-			$id_toko = strip_tags($_POST["id_toko"]);
-			$nama_pengujian = strip_tags($_POST["nama_pengujian"]);
-			$id_user = strip_tags($_SESSION["cid"]);
-			$p1 = strip_tags($_POST["p1"]);
-			$p2 = strip_tags($_POST["p2"]);
-			$p3 = strip_tags($_POST["p3"]);
-			$p4 = strip_tags($_POST["p4"]);
-			$p5 = strip_tags($_POST["p5"]);
-			$p7 = strip_tags($_POST["p7"]);
-			$p8 = strip_tags($_POST["p8"]);
-			$p9 = strip_tags($_POST["p9"]);
-			$p10 = strip_tags($_POST["p10"]);
-			$p11 = strip_tags($_POST["p11"]);
-			$p12 = strip_tags($_POST["p12"]);
-			$jumlah_persediaan = $p1 + $p2 + $p3 + $p4 + $p5 + $p6 + $p7 + $p8 + $p9 + $p10 + $p11 + $p12;
-			$rekapitulasi = "";
-			$kategori = "";
-			$keterangan = "";
+	<?php
+	$jmldata = $jum;
+	if ($jmldata > 0) {
+		if ($batas < 1) {
+			$batas = 1;
+		}
+		$jmlhal  = ceil($jmldata / $batas);
+		echo "<div class=paging>";
+		if ($page > 1) {
+			$prev = $page - 1;
+			echo "<span class=prevnext><a href='$_SERVER[PHP_SELF]?page=$prev&mnu=pengujian'>« Prev</a></span> ";
+		} else {
+			echo "<span class=disabled>« Prev</span> ";
+		}
 
-
-			if ($pro == "simpan") {
-				$sql = " INSERT INTO `$tbpengujian` (
-`nama_pengujian` ,
-`id_user` ,
-`p1` ,
-`p2` ,
-`p3` ,
-`p4` ,
-`p5` ,
-`p6`,
-`p7`,
-`p8`,
-`p9`,
-`p10`,
-`p11`,
-`p12`,
-`jumlah_persediaan`,
-`id_toko`,
-`rekapitulasi`,
-`kategori`,`tanggal`,`jam`,
-`keterangan`
-) VALUES (
-'$nama_pengujian',
-'" . $_SESSION['cid'] . "', 
-'$p1',
-'$p2',
-'$p3',
-'$p4',
-'$p5',
-'$p6',
-'$p7',
-'$p8',
-'$p9',
-'$p10',
-'$p11',
-'$p12',
-'$jumlah_persediaan',
-'$id_toko',
-'',
-'','" . date("Y-m-d") . "','" . date("H:i:s") . "',
-'$keterangan'
-)";
-
-				$simpan = process($conn, $sql);
-				if ($simpan) {
-
-					$sql = "select `id_pengujian` from `$tbpengujian` order by `id_pengujian` desc";
-					$d = getField($conn, $sql);
-					$id_pengujian = $d["id_pengujian"];
-
-					echo "<script>alert('Data \"$nama_pengujian\" berhasil disimpan !');document.location.href='?mnu=knn&id=$id_pengujian';</script>";
-				} else {
-					echo "<script>alert('Data \"$nama_pengujian\" gagal disimpan...');document.location.href='?mnu=pengujian';</script>";
-				}
+		for ($i = 1; $i <= $jmlhal; $i++)
+			if ($i != $page) {
+				echo "<a href='$_SERVER[PHP_SELF]?page=$i&mnu=pengujian'>$i</a> ";
 			} else {
-				$id_pengujian = strip_tags($_POST["id_pengujian"]);
-				$id_pengujian0 = strip_tags($_POST["id_pengujian0"]);
+				echo " <span class=current>$i</span> ";
+			}
 
-				$sql = "update `$tbpengujian` set 
+		if ($page < $jmlhal) {
+			$next = $page + 1;
+			echo "<span class=prevnext><a href='$_SERVER[PHP_SELF]?page=$next&mnu=pengujian'>Next »</a></span>";
+		} else {
+			echo "<span class=disabled>Next »</span>";
+		}
+		echo "</div>";
+	} //if jmldata
+
+	$jmldata = $jum;
+	echo "<p align=center>Total data <b>$jmldata</b> item</p>";
+
+	echo "</div>";
+} //for atas
+	?>
+
+	<?php
+	if (isset($_POST["Simpan"])) {
+		$pro = strip_tags($_POST["pro"]);
+		$id_tahun = strip_tags($_POST["id_tahun"]);
+		$nama_pengujian = strip_tags($_POST["nama_pengujian"]);
+		$id_user = strip_tags($_SESSION["cid"]);
+		$jalur_pendaftaran = strip_tags($_POST["jalur_pendaftaran"]);
+		$gelombang = strip_tags($_POST["gelombang"]);
+		$sistem_kuliah = strip_tags($_POST["sistem_kuliah"]);
+		$jenis_kelamin = strip_tags($_POST["jenis_kelamin"]);
+		$nilai_lulusan = strip_tags($_POST["nilai_lulusan"]);
+		$jenjang_pendidikan = strip_tags($_POST["jenjang_pendidikan"]);
+		$jurusan_sekolah = strip_tags($_POST["jurusan_sekolah"]);
+		$tanggal_daftar = strip_tags($_POST["tanggal_daftar"]);
+		$prodi_diterima = strip_tags($_POST["prodi_diterima"]);
+		$jenis_institusi = strip_tags($_POST["jenis_institusi"]);
+		$provinsi_institusi = strip_tags($_POST["provinsi_institusi"]);
+		$jumlah = $jalur_pendaftaran + $gelombang + $sistem_kuliah + $jenis_kelamin + $nilai_lulusan + $tahun_lulus + $provinsi_institusi + $jenis_institusi + $jenjang_pendidikan + $jurusan_sekolah + $tanggal_daftar + $prodi_diterima;
+		$rekapitulasi = "";
+		$kategori = "";
+		$keterangan = "";
+
+
+		if ($pro == "simpan") {
+			$sql = " INSERT INTO `$tbpengujian` (
+	`nama_pengujian` ,
+	`id_user` ,
+	`jalur_pendaftaran` ,
+	`gelombang` ,
+	`sistem_kuliah` ,
+	`jenis_kelamin` ,
+	`nilai_lulusan` ,
+	`tahun_lulus`,
+	`jenjang_pendidikan`,
+	`jurusan_sekolah`,
+	`tanggal_daftar`,
+	`prodi_diterima`,
+	`jenis_institusi`,
+	`provinsi_institusi`,
+	`jumlah`,
+	`id_tahun`,
+	`rekapitulasi`,
+	`kategori`,`tanggal`,`jam`,
+	`keterangan`
+	) VALUES (
+	'$nama_pengujian',
+	'" . $_SESSION['cid'] . "', 
+	'$jalur_pendaftaran',
+	'$gelombang',
+	'$sistem_kuliah',
+	'$jenis_kelamin',
+	'$nilai_lulusan',
+	'$tahun_lulus',
+	'$jenjang_pendidikan',
+	'$jurusan_sekolah',
+	'$tanggal_daftar',
+	'$prodi_diterima',
+	'$jenis_institusi',
+	'$provinsi_institusi',
+	'$jumlah',
+	'$id_tahun',
+	'',
+	'','" . date("Y-m-d") . "','" . date("H:i:s") . "',
+	'$keterangan'
+	)";
+
+			$simpan = process($conn, $sql);
+			if ($simpan) {
+
+				$sql = "select `id_pengujian` from `$tbpengujian` order by `id_pengujian` desc";
+				$d = getField($conn, $sql);
+				$id_pengujian = $d["id_pengujian"];
+
+				echo "<script>alert('Data \"$nama_pengujian\" berhasil disimpan !');document.location.href='?mnu=knn&id=$id_pengujian';</script>";
+			} else {
+				echo "<script>alert('Data \"$nama_pengujian\" gagal disimpan...');document.location.href='?mnu=pengujian';</script>";
+			}
+		} else {
+			$id_pengujian = strip_tags($_POST["id_pengujian"]);
+			$id_pengujian0 = strip_tags($_POST["id_pengujian0"]);
+
+			$sql = "update `$tbpengujian` set 
 	`nama_pengujian`='$nama_pengujian',
-	`p1`='$p1' ,
-	`p2`='$p2',
-	`p3`='$p3',
-	`p4`='$p4',
-	`p5`='$p5',
-	`p6`='$p6',
-	`p7`='$p7',
-	`p8`='$p8',
-	`p9`='$p9',
-	`p10`='$p10',
-	`p11`='$p11',
-	`p12`='$p12',
-	`jumlah_persediaan`='$jumlah_persediaan',
+	`jalur_pendaftaran`='$jalur_pendaftaran' ,
+	`gelombang`='$gelombang',
+	`sistem_kuliah`='$sistem_kuliah',
+	`jenis_kelamin`='$jenis_kelamin',
+	`nilai_lulusan`='$nilai_lulusan',
+	`tahun_lulus`='$tahun_lulus',
+	`jenjang_pendidikan`='$jenjang_pendidikan',
+	`jurusan_sekolah`='$jurusan_sekolah',
+	`tanggal_daftar`='$tanggal_daftar',
+	`prodi_diterima`='$prodi_diterima',
+	`jenis_institusi`='$jenis_institusi',
+	`provinsi_institusi`='$provinsi_institusi',
+	`jumlah`='$jumlah',
 	`keterangan`='$keterangan'
 	 where `id_pengujian`='$id_pengujian0'";
-				$ubah = process($conn, $sql);
-				if ($ubah) {
-					echo "<script>alert('Data berhasil diubah !');document.location.href='?mnu=knn&id=$id_pengujian';</script>";
-				} else {
-					echo "<script>alert('Data  gagal diubah...');document.location.href='?mnu=pengujian';</script>";
-				}
-			} //else simpan
-		}
-		?>
-
-		<?php
-		if (isset($_GET["pro"]) && $_GET["pro"] == "hapus") {
-			$id_pengujian = $_GET["kode"];
-			$nama_pengujian = $_GET["nama_pengujian"];
-			$sql = "delete from `$tbpengujian` where `id_pengujian`='$id_pengujian'";
-			$hapus = process($conn, $sql);
-			if ($hapus) {
-				echo "<script>alert('Data berhasil dihapus !');document.location.href='?mnu=pengujian';</script>";
+			$ubah = process($conn, $sql);
+			if ($ubah) {
+				echo "<script>alert('Data berhasil diubah !');document.location.href='?mnu=knn&id=$id_pengujian';</script>";
 			} else {
-				echo "<script>alert('Data gagal dihapus...');document.location.href='?mnu=pengujian';</script>";
+				echo "<script>alert('Data  gagal diubah...');document.location.href='?mnu=pengujian';</script>";
 			}
+		} //else simpan
+	}
+	?>
+
+	<?php
+	if (isset($_GET["pro"]) && $_GET["pro"] == "hapus") {
+		$id_pengujian = $_GET["kode"];
+		$nama_pengujian = $_GET["nama_pengujian"];
+		$sql = "delete from `$tbpengujian` where `id_pengujian`='$id_pengujian'";
+		$hapus = process($conn, $sql);
+		if ($hapus) {
+			echo "<script>alert('Data berhasil dihapus !');document.location.href='?mnu=pengujian';</script>";
+		} else {
+			echo "<script>alert('Data gagal dihapus...');document.location.href='?mnu=pengujian';</script>";
 		}
-		?>
+	}
+	?>
+
+	</div>
+	</div>

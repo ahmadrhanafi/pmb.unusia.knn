@@ -1,5 +1,45 @@
-
+<div class="container" style="margin-top: 80px;">
   <div align="center">
-  <h1> <b>K-Nearest Neighbor (KNN) </b></h1>
-  <p align="justify">K-Nearest Neighbor (KNN) adalah suatu metode yang menggunakan algoritma supervised dimana hasil dari query instance yang baru diklasifikan berdasarkan mayoritas dari kategori pada KNN. Tujuan dari algoritma ini adalah mengklasifikasikan obyek baru bedasarkan atribut dan training sample. Classifier tidak menggunakan model apapun untuk dicocokkan dan hanya berdasarkan pada memori. Diberikan titik query, akan ditemukan sejumlah k obyek atau (titik training) yang paling dekat dengan titik query. Klasifikasi menggunakan voting terbanyak diantara klasifikasi dari k obyek.. algoritma KNN menggunakan klasifikasi ketetanggaan sebagai nilai prediksi dari query instance yang baru.</p>
+    <h2 class="mb-4 fs-6"> <b><i>K</i>-Nearest Neighbor (<i>K</i>-NN) </b></h2>
+    <p align="justify"><?= $translations['knn_home']; ?></p>
   </div>
+
+  <?php
+  $jml_dataset   = getJum($conn, "SELECT * FROM tb_tahun");
+  $jml_pengujian = getJum($conn, "SELECT * FROM tb_pengujian");
+  $jml_user      = getJum($conn, "SELECT * FROM tb_user");
+
+  // Ambil prediksi terakhir
+  $sql_last = "SELECT * FROM tb_pengujian ORDER BY id_pengujian DESC LIMIT 1";
+  $last_pred = getField($conn, $sql_last);
+  ?>
+
+  <!-- Statistik -->
+  <div class="row g-4 mt-4 mb-5">
+    <div class="col-12 col-md-4">
+      <div class="card border-2 text-light shadow-lg h-100">
+        <div class="card-body text-center">
+          <h3 class="text-dark mt-2"><?= $jml_dataset; ?></h3>
+          <p class="text-dark mb-0"><?= $translations['data_latihan']; ?></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card border-2 text-light shadow-lg h-100">
+        <div class="card-body text-center">
+          <h3 class="text-dark mt-2"><?= $jml_pengujian; ?></h3>
+          <p class="text-dark mb-0"><?= $translations['data_pengujian']; ?></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card border-2 text-light shadow-lg h-100">
+        <div class="card-body text-center">
+          <h3 class="text-dark mt-2"><?= $jml_user; ?></h3>
+          <p class="text-dark mb-0"><?= $translations['user_terdaftar']; ?></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

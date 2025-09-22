@@ -13,13 +13,20 @@ require_once "konmysqli.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<!-- Favicon icon-->
-	<link rel="shortcut icon" type="image/png" href="assets/img/logo_sensor.png" />
-
+	<link rel="shortcut icon" type="image/png" href="assets/img/logo/unusia.png" />
+	
 	<!-- Core Css -->
 	<link rel="stylesheet" href="assets_modern/css/styles.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-	<title>Penjualan Batik dengan KNN</title>
+	<title>Login | Klasifikasi PMB UNUSIA</title>
 </head>
+
+<style>
+	body {
+		background-color: #ddd;
+	}
+</style>
 
 <body>
 	<!-- Preloader -->
@@ -31,36 +38,52 @@ require_once "konmysqli.php";
 			<div class="position-relative z-index-5">
 				<div class="row">
 					<div class="col-xl-7 col-xxl-8">
-						<a href="../main/index.html" class="text-nowrap logo-img d-block px-4 py-9 w-100">
-							<img src="assets/img/logo_sensor.png" class="dark-logo" alt="Logo-Dark" style="height: 70px;" />
-							<img src="assets/img/logo_sensor.png" class="light-logo" alt="Logo-light" style="height: 70px;" />
+						<a href="index.php" class="text-nowrap logo-img d-block px-4 py-9 w-100">
+							<img src="assets/img/logo/logounusia.png" class="dark-logo" alt="Logo-Dark" style="height: 60px; width: 80px;" />
+							<img src="assets/img/logo/logounusia.png" class="light-logo" alt="Logo-light" style="height: 100px; width: 130px;" />
 						</a>
-						<div class="d-none d-xl-flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
-							<img src="assets_modern/images/backgrounds/login-security.svg" alt="" class="img-fluid" width="500">
+						<div class="d-none d-xl-flex align-items-center justify-content-center" style="height: calc(80vh - 80px);">
+							<img src="assets_modern/images/backgrounds/logounusia.png" alt="" class="img-fluid" width="500">
 						</div>
 					</div>
 					<div class="col-xl-5 col-xxl-4">
-						<div class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
+						<div class="authentication-login min-vh-100 row justify-content-center align-items-center p-4"
+							style="background: url('assets/img/bg/pattern-unusia.jpg') no-repeat center; background-size: cover;">
+
 							<div class="col-sm-8 col-md-6 col-xl-9">
-								<h2 class="mb-3 fs-7 fw-bolder">Selamat Datang Di Batik</h2>
-								<p class=" mb-9">Silahkan Lakukan Login</p>
+								<div class="mb-3">
+									<h3 class="mb-2 fw-bolder text-dark text-center">
+										Selamat Datang
+									</h3>
+									<h3 class="mb-5 fw-bolder text-dark text-center">
+										Di Klasifikasi PMB UNUSIA
+									</h3>
 
-								<form  method="post">
-									<div class="mb-3">
-										<label for="exampleInputEmail1" class="form-label">Username</label>
-										<input type="text" class="form-control" name="user" id="user" aria-describedby="emailHelp">
+									<div class="card p-4 shadow-lg">
+										<form method="post">
+											<div class="mb-3">
+												<label for="exampleInputEmail1" class="form-label fs-4">Username</label>
+												<input type="text" class="form-control" name="user" id="user" aria-describedby="emailHelp">
+											</div>
+											<div class="mb-4">
+												<label for="exampleInputPassword1" class="form-label fs-4">Password</label>
+												<input type="password" class="form-control" name="pass" id="pass">
+												<span class="position-absolute top-50 end-0 translate-middle-y"
+													style="cursor:pointer; margin-top: 12px; margin-right: 42px;" onclick="togglePassword()">
+													<i class="fa fa-eye" id="toggleIcon"></i>
+												</span>
+											</div>
+											<button type="submit"
+												class="btn btn-lg text-white w-100 py-8 mb-4 rounded-2"
+												name="Login" id="Login"
+												style="background-color: #28a745;">Sign In</button>
+										</form>
 									</div>
-									<div class="mb-4">
-										<label for="exampleInputPassword1" class="form-label">Password</label>
-										<input type="password" class="form-control" name="pass" id="pass">
-									</div>
-
-									<button type="submit" class="btn btn-primary w-100 py-8 mb-4 rounded-2" name="Login" id="Login">Sign In</button>
-
-								</form>
+								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -100,12 +123,36 @@ if (isset($_POST["Login"])) {
 		$_SESSION["cid"] = $kode;
 		$_SESSION["cnama"] = $nama;
 		$_SESSION["cstatus"] = $level;
-		echo "<script>alert('Otentikasi " . $_SESSION["cstatus"] . " an " . $_SESSION["cnama"] . " (" . $_SESSION["cid"] . ") berhasil Login!');
-		document.location.href='index.php?mnu=home';</script>";
+		echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script>
+      Swal.fire({
+        icon: 'success',
+        title: 'Login Berhasil!',
+        html: 'Otentikasi {$_SESSION['cnama']} sebagai {$_SESSION['cstatus']}',
+        showConfirmButton: true,
+		confirmButtonText: 'Enter',
+    	confirmButtonColor: '#28a745',
+      }).then(() => {
+        window.location.href = 'index.php?mnu=home';
+      });
+    </script>
+    ";
 	} else {
 		session_destroy();
-		echo "<script>alert('Otentikasi Login GAGAL !,Silakan cek data Anda kembali...');
-			document.location.href='login.php';</script>";
+		echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Login Gagal!',
+        text: 'Silakan cek data Anda kembali...',
+        confirmButtonText: 'Coba Lagi'
+      }).then(() => {
+        window.location.href = 'login.php';
+      });
+    </script>
+    ";
 	}
 }
 
@@ -125,4 +172,22 @@ function getField($conn, $sql)
 	$rs->free();
 	return $d;
 }
+
 ?>
+
+<script>
+	function togglePassword() {
+		const passField = document.getElementById("pass");
+		const icon = document.getElementById("toggleIcon");
+
+		if (passField.type === "password") {
+			passField.type = "text";
+			icon.classList.remove("fa-eye");
+			icon.classList.add("fa-eye-slash");
+		} else {
+			passField.type = "password";
+			icon.classList.remove("fa-eye-slash");
+			icon.classList.add("fa-eye");
+		}
+	}
+</script>
