@@ -3,7 +3,7 @@
 $DBServer = 'localhost';
 $DBUser   = 'root';
 $DBPass   = '';
-$DBName   = 'pmb_knn_unusia';
+$DBName   = 'pmb_unusia_knn';
 $gambar0="avatar.jpg";
 $css="flickr.css";//greenblack,gradient,flickr,amazon
 $PATH="ypathcss";
