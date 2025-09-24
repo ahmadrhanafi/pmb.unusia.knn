@@ -113,7 +113,7 @@ $ks12: $provinsi_institusi";
 	});
 </script>
 
-<div class="container" style="margin-top: 80px;">
+<div class="container" style="margin-top: 40px;">
 	<div id="accordion">
 		<h3 class="mb-4">Analisa Algoritma KNN</h3>
 		<hr>

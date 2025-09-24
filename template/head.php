@@ -159,30 +159,30 @@
   }
 
   $kp1 = "Jalur Pendaftaran";
-  $kp2 = "Gelombang";
-  $kp3 = "Sistem Kuliah";
-  $kp4 = "Jenis Kelamin";
-  $kp5 = "Nilai Lulusan";
-  $kp6 = "Tahun Lulus";
-  $kp7 = "Jenjang Pendidikan";
-  $kp8 = "Jurusan Sekolah";
-  $kp9 = "Tanggal Daftar";
-  $kp10 = "Prodi Diterima";
-  $kp11 = "Jenis Institusi";
-  $kp12 = "Provinsi Institusi";
+  $kp2 = "Tanggal Daftar";
+  $kp3 = "Gelombang";
+  $kp4 = "Sistem Kuliah";
+  $kp5 = "Jenis Kelamin";
+  $kp6 = "Nilai Lulusan";
+  $kp7 = "Tahun Lulus";
+  $kp8 = "Jenjang Pendidikan";
+  $kp9 = "Jenis Institusi";
+  $kp10 = "Jurusan Sekolah";
+  $kp11 = "Provinsi Institusi";
+  $kp12 = "Prodi Diterima";
 
   $ks1  = "Jalur Pendaftaran";
-  $ks2  = "Gelombang";
-  $ks3  = "Sistem Kuliah";
-  $ks4  = "Jenis Kelamin";
-  $ks5  = "Nilai Lulusan";
-  $ks6  = "Tahun Lulus";
-  $ks7  = "Jenjang Pendidikan";
-  $ks8 = "Jurusan Sekolah";
-  $ks9 = "Tanggal Daftar";
-  $ks10 = "Prodi Diterima";
-  $ks11  = "Jenis Institusi";
-  $ks12  = "Provinsi Institusi";
+  $ks2 = "Tanggal Daftar";
+  $ks3  = "Gelombang";
+  $ks4  = "Sistem Kuliah";
+  $ks5  = "Jenis Kelamin";
+  $ks6  = "Nilai Lulusan";
+  $ks7  = "Tahun Lulus";
+  $ks8  = "Jenjang Pendidikan";
+  $ks9  = "Jenis Institusi";
+  $ks10 = "Jurusan Sekolah";
+  $ks11  = "Provinsi Institusi";
+  $ks12 = "Prodi Diterima";
 
   ?>
 

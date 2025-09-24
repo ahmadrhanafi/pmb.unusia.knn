@@ -31,7 +31,7 @@ require_once "konmysqli.php";
 <body>
 	<!-- Preloader -->
 	<div class="preloader">
-		<img src="assets/img/logo_sensor.png" alt="loader" class="lds-ripple img-fluid" />
+		<img src="assets/img/unusia.png" alt="loader" class="lds-ripple img-fluid" />
 	</div>
 	<div id="main-wrapper">
 		<div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
@@ -43,7 +43,7 @@ require_once "konmysqli.php";
 							<img src="assets/img/logo/logounusia.png" class="light-logo" alt="Logo-light" style="height: 100px; width: 130px;" />
 						</a>
 						<div class="d-none d-xl-flex align-items-center justify-content-center" style="height: calc(80vh - 80px);">
-							<img src="assets_modern/images/backgrounds/logounusia.png" alt="" class="img-fluid" width="500">
+							<img src="assets/img/logo/logounusia.png" alt="" class="img-fluid" width="500">
 						</div>
 					</div>
 					<div class="col-xl-5 col-xxl-4">
@@ -53,10 +53,10 @@ require_once "konmysqli.php";
 							<div class="col-sm-8 col-md-6 col-xl-9">
 								<div class="mb-3">
 									<h3 class="mb-2 fw-bolder text-dark text-center">
-										Selamat Datang
+										Selamat Datang di
 									</h3>
 									<h3 class="mb-5 fw-bolder text-dark text-center">
-										Di Klasifikasi PMB UNUSIA
+										KLASIFIKASI PMB UNUSIA
 									</h3>
 
 									<div class="card p-4 shadow-lg">

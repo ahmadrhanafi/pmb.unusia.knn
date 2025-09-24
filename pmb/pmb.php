@@ -209,64 +209,69 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 						<td width="39"><input required name="jalur_pendaftaran" type="number" class="form-control" id="jalur_pendaftaran" value="<?php echo $jalur_pendaftaran; ?>" size="25" />
 						</td>
 
-						<td width="10"><label for="gelombang"><?php echo $kp2; ?></label>
+						<td width="10"><label for="tanggal_daftar"><?php echo $kp2; ?></label>
 						<td width="1">:
-						<td width="39"><input required name="gelombang" type="number" class="form-control" id="gelombang" value="<?php echo $gelombang; ?>" size="25" />
+						<td width="39"><input required name="tanggal_daftar" type="number" class="form-control" id="tanggal_daftar" value="<?php echo $tanggal_daftar; ?>" size="25" />
 						</td>
 					</tr>
 
 					<tr>
-						<td><label for="sistem_kuliah"><?php echo $kp3; ?></label>
+						<td><label for="gelombang"><?php echo $kp3; ?></label>
+						<td>:
+						<td><input required name="gelombang" type="number" class="form-control" id="gelombang" value="<?php echo $gelombang; ?>" size="25" />
+						</td>
+
+						<td><label for="sistem_kuliah"><?php echo $kp4; ?></label>
 						<td>:
 						<td><input required name="sistem_kuliah" type="number" class="form-control" id="sistem_kuliah" value="<?php echo $sistem_kuliah; ?>" size="25" />
 						</td>
-						<td><label for="jenis_kelamin"><?php echo $kp4; ?></label>
+					</tr>
+
+					<tr>
+						<td><label for="jenis_kelamin"><?php echo $kp5; ?></label>
 						<td>:
 						<td><input required name="jenis_kelamin" type="number" class="form-control" id="jenis_kelamin" value="<?php echo $jenis_kelamin; ?>" size="25" />
 						</td>
-					</tr>
 
-					<tr>
-						<td><label for="nilai_lulusan"><?php echo $kp5; ?></label>
+						<td><label for="nilai_lulusan"><?php echo $kp6; ?></label>
 						<td>:
 						<td><input required name="nilai_lulusan" type="number" class="form-control" id="nilai_lulusan" value="<?php echo $nilai_lulusan; ?>" size="25" />
 						</td>
-						<td><label for="tahun_lulus"><?php echo $kp6; ?></label>
+					</tr>
+
+					<tr>
+						<td><label for="tahun_lulus"><?php echo $kp7; ?></label>
 						<td>:
 						<td><input required name="tahun_lulus" type="number" class="form-control" id="tahun_lulus" value="<?php echo $tahun_lulus; ?>" size="25" />
+						</td>
+
+						<td><label for="jenjang_pendidikan"><?php echo $kp8; ?></label>
+						<td>:
+						<td><input required name="jenjang_pendidikan" type="number" class="form-control" id="jenjang_pendidikan" value="<?php echo $jenjang_pendidikan; ?>" size="25" />
 						</td>
 					</tr>
 
 					<tr>
-						<td><label for="jenjang_pendidikan"><?php echo $kp7; ?></label>
+						<td><label for="jenis_institusi"><?php echo $kp9; ?></label>
 						<td>:
-						<td><input required name="jenjang_pendidikan" type="number" class="form-control" id="jenjang_pendidikan" value="<?php echo $jenjang_pendidikan; ?>" size="25" />
+						<td><input required name="jenis_institusi" type="number" class="form-control" id="jenis_institusi" value="<?php echo $jenis_institusi; ?>" size="25" />
 						</td>
-						<td><label for="jurusan_sekolah"><?php echo $kp8; ?></label>
+
+						<td><label for="jurusan_sekolah"><?php echo $kp10; ?></label>
 						<td>:
 						<td><input required name="jurusan_sekolah" type="number" class="form-control" id="jurusan_sekolah" value="<?php echo $jurusan_sekolah; ?>" size="25" />
 						</td>
 					</tr>
 
 					<tr>
-						<td><label for="tanggal_daftar"><?php echo $kp9; ?></label>
-						<td>:
-						<td><input required name="tanggal_daftar" type="number" class="form-control" id="tanggal_daftar" value="<?php echo $tanggal_daftar; ?>" size="25" />
-						</td>
-						<td><label for="prodi_diterima"><?php echo $kp10; ?></label>
-						<td>:
-						<td><input required name="prodi_diterima" type="number" class="form-control" id="prodi_diterima" value="<?php echo $prodi_diterima; ?>" size="25" />
-						</td>
-					</tr>
-
-					<tr>
-						<td><label for="jenis_institusi"><?php echo $kp11; ?></label>
-						<td>:
-						<td><input required name="jenis_institusi" type="number" class="form-control" id="jenis_institusi" value="<?php echo $jenis_institusi; ?>" size="25" />
-						</td>
-						<td><label for="provinsi_institusi"><?php echo $kp12; ?></label>
+						<td><label for="provinsi_institusi"><?php echo $kp11; ?></label>
 						<td>:
 						<td><input required name="provinsi_institusi" type="number" class="form-control" id="provinsi_institusi" value="<?php echo $provinsi_institusi; ?>" size="25" />
+						</td>
+						
+						<td><label for="prodi_diterima"><?php echo $kp12; ?></label>
+						<td>:
+						<td><input required name="prodi_diterima" type="number" class="form-control" id="prodi_diterima" value="<?php echo $prodi_diterima; ?>" size="25" />
 						</td>
 					</tr>
 

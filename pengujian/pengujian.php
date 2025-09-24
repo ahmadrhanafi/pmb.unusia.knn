@@ -22,17 +22,17 @@ $gambar0 = "avatar.jpg";
 $nama_pengujian = "";
 $id_user = "";
 $jalur_pendaftaran = "";
+$tanggal_daftar = "";
 $gelombang = "";
 $sistem_kuliah = "";
 $jenis_kelamin = "";
 $nilai_lulusan = "";
 $tahun_lulus = "";
 $jenjang_pendidikan = "";
-$jurusan_sekolah = "";
-$tanggal_daftar = "";
-$prodi_diterima = "";
 $jenis_institusi = "";
+$jurusan_sekolah = "";
 $provinsi_institusi = "";
+$prodi_diterima = "";
 $jumlah = "";
 $harga_permeter = "";
 $total_pembelian = "";
@@ -51,17 +51,17 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 	$nama_pengujian = $d["nama_pengujian"];
 	$id_user = $d["id_user"];
 	$jalur_pendaftaran = $d["jalur_pendaftaran"];
+	$tanggal_daftar = $d["tanggal_daftar"];
 	$gelombang = $d["gelombang"];
 	$sistem_kuliah = $d["sistem_kuliah"];
 	$jenis_kelamin = $d["jenis_kelamin"];
 	$nilai_lulusan = $d["nilai_lulusan"];
 	$tahun_lulus = $d["tahun_lulus"];
 	$jenjang_pendidikan = $d["jenjang_pendidikan"];
-	$jurusan_sekolah = $d["jurusan_sekolah"];
-	$tanggal_daftar = $d["tanggal_daftar"];
-	$prodi_diterima = $d["prodi_diterima"];
 	$jenis_institusi = $d["jenis_institusi"];
+	$jurusan_sekolah = $d["jurusan_sekolah"];
 	$provinsi_institusi = $d["provinsi_institusi"];
+	$prodi_diterima = $d["prodi_diterima"];
 	$jumlah = $d["jumlah"];
 	$rekapitulasi = $d["rekapitulasi"];
 	$kategori = $d["kategori"];
@@ -126,53 +126,53 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 						<td>:
 						<td><input required name="jalur_pendaftaran" type="number" class="form-control" id="jalur_pendaftaran" value="<?php echo $jalur_pendaftaran; ?>" size="25" />
 						</td>
-						<td height="24"><label for="gelombang"><?php echo $kp2; ?></label>
-						<td>:
-						<td><input required name="gelombang" type="number" class="form-control" id="gelombang" value="<?php echo $gelombang; ?>" size="25" />
-						</td>
-					</tr>
-
-					<tr>
-						<td height="24"><label for="sistem_kuliah"><?php echo $kp3; ?></label>
-						<td>:
-						<td><input required name="sistem_kuliah" type="number" class="form-control" id="sistem_kuliah" value="<?php echo $sistem_kuliah; ?>" size="25" />
-						</td>
-						<td height="24"><label for="jenis_kelamin"><?php echo $kp4; ?></label>
-						<td>:
-						<td><input required name="jenis_kelamin" type="number" class="form-control" id="jenis_kelamin" value="<?php echo $jenis_kelamin; ?>" size="25" />
-						</td>
-					</tr>
-
-					<tr>
-						<td height="24"><label for="nilai_lulusan"><?php echo $kp5; ?></label>
-						<td>:
-						<td><input required name="nilai_lulusan" type="number" class="form-control" id="nilai_lulusan" value="<?php echo $nilai_lulusan; ?>" size="25" />
-						</td>
-						<td height="24"><label for="tahun_lulus"><?php echo $kp6; ?></label>
-						<td>:
-						<td><input required name="tahun_lulus" type="number" class="form-control" id="tahun_lulus" value="<?php echo $tahun_lulus; ?>" size="25" />
-						</td>
-					</tr>
-
-					<tr>
-						<td height="24"><label for="jenjang_pendidikan"><?php echo $kp7; ?></label>
-						<td>:
-						<td><input required name="jenjang_pendidikan" type="number" class="form-control" id="jenjang_pendidikan" value="<?php echo $jenjang_pendidikan; ?>" size="25" />
-						</td>
-						<td height="24"><label for="jurusan_sekolah"><?php echo $kp8; ?></label>
-						<td>:
-						<td><input required name="jurusan_sekolah" type="number" class="form-control" id="jurusan_sekolah" value="<?php echo $jurusan_sekolah; ?>" size="25" />
-						</td>
-					</tr>
-
-					<tr>
-						<td height="24"><label for="tanggal_daftar"><?php echo $kp9; ?></label>
+						<td height="24"><label for="tanggal_daftar"><?php echo $kp2; ?></label>
 						<td>:
 						<td><input required name="tanggal_daftar" type="number" class="form-control" id="tanggal_daftar" value="<?php echo $tanggal_daftar; ?>" size="25" />
 						</td>
-						<td height="24"><label for="prodi_diterima"><?php echo $kp10; ?></label>
+					</tr>
+
+					<tr>
+						<td height="24"><label for="gelombang"><?php echo $kp3; ?></label>
 						<td>:
-						<td><input required name="prodi_diterima" type="number" class="form-control" id="prodi_diterima" value="<?php echo $prodi_diterima; ?>" size="25" />
+						<td><input required name="gelombang" type="number" class="form-control" id="gelombang" value="<?php echo $gelombang; ?>" size="25" />
+						</td>
+						<td height="24"><label for="sistem_kuliah"><?php echo $kp4; ?></label>
+						<td>:
+						<td><input required name="sistem_kuliah" type="number" class="form-control" id="sistem_kuliah" value="<?php echo $sistem_kuliah; ?>" size="25" />
+						</td>
+					</tr>
+
+					<tr>
+						<td height="24"><label for="jenis_kelamin"><?php echo $kp5; ?></label>
+						<td>:
+						<td><input required name="jenis_kelamin" type="number" class="form-control" id="jenis_kelamin" value="<?php echo $jenis_kelamin; ?>" size="25" />
+						</td>
+						<td height="24"><label for="nilai_lulusan"><?php echo $kp6; ?></label>
+						<td>:
+						<td><input required name="nilai_lulusan" type="number" class="form-control" id="nilai_lulusan" value="<?php echo $nilai_lulusan; ?>" size="25" />
+						</td>
+					</tr>
+
+					<tr>
+						<td height="24"><label for="tahun_lulus"><?php echo $kp7; ?></label>
+						<td>:
+						<td><input required name="tahun_lulus" type="number" class="form-control" id="tahun_lulus" value="<?php echo $tahun_lulus; ?>" size="25" />
+						</td>
+						<td height="24"><label for="jenjang_pendidikan"><?php echo $kp8; ?></label>
+						<td>:
+						<td><input required name="jenjang_pendidikan" type="number" class="form-control" id="jenjang_pendidikan" value="<?php echo $jenjang_pendidikan; ?>" size="25" />
+						</td>
+					</tr>
+
+					<tr>
+						<td height="24"><label for="jenis_institusi"><?php echo $kp9; ?></label>
+						<td>:
+						<td><input required name="jenis_institusi" type="number" class="form-control" id="jenis_institusi" value="<?php echo $jenis_institusi; ?>" size="25" />
+						</td>
+						<td height="24"><label for="jurusan_sekolah"><?php echo $kp12; ?></label>
+						<td>:
+						<td><input required name="jurusan_sekolah" type="number" class="form-control" id="jurusan_sekolah" value="<?php echo $jurusan_sekolah; ?>" size="25" />
 						</td>
 					</tr>
 
@@ -181,9 +181,9 @@ if (isset($_GET["pro"]) && $_GET["pro"] == "ubah") {
 						<td>:
 						<td><input required name="jenis_institusi" type="number" class="form-control" id="jenis_institusi" value="<?php echo $jenis_institusi; ?>" size="25" />
 						</td>
-						<td height="24"><label for="provinsi_institusi"><?php echo $kp12; ?></label>
+						<td height="24"><label for="prodi_diterima"><?php echo $kp10; ?></label>
 						<td>:
-						<td><input required name="provinsi_institusi" type="number" class="form-control" id="provinsi_institusi" value="<?php echo $provinsi_institusi; ?>" size="25" />
+						<td><input required name="prodi_diterima" type="number" class="form-control" id="prodi_diterima" value="<?php echo $prodi_diterima; ?>" size="25" />
 						</td>
 					</tr>
 
@@ -280,18 +280,18 @@ foreach ($arrc as $dc) {
 						$nama_pengujian = $d["nama_pengujian"];
 						$nama_user = getUser($conn, $d["id_user"]);
 						$jalur_pendaftaran = $d["jalur_pendaftaran"];
+						$tanggal_daftar = $d["tanggal_daftar"];
 						$gelombang = $d["gelombang"];
 						$sistem_kuliah = $d["sistem_kuliah"];
 						$jenis_kelamin = $d["jenis_kelamin"];
 						$nilai_lulusan = $d["nilai_lulusan"];
 						$tahun_lulus = $d["tahun_lulus"];
 						$jenjang_pendidikan = $d["jenjang_pendidikan"];
-						$jurusan_sekolah = $d["jurusan_sekolah"];
-						$tanggal_daftar = $d["tanggal_daftar"];
-						$prodi_diterima = $d["prodi_diterima"];
-						$jumlah = $d["jumlah"];
 						$jenis_institusi = $d["jenis_institusi"];
+						$jurusan_sekolah = $d["jurusan_sekolah"];
+						$jumlah = $d["jumlah"];
 						$provinsi_institusi = $d["provinsi_institusi"];
+						$prodi_diterima = $d["prodi_diterima"];
 						$rekapitulasi = $d["rekapitulasi"];
 						$kategori = $d["kategori"];
 						$keterangan = $d["keterangan"];
@@ -304,17 +304,17 @@ foreach ($arrc as $dc) {
 				<td>$no</td>
 				<td><small><i>$nama_pengujian, $tanggal $jam Wib</small></i></td>
 				<td>$jalur_pendaftaran</td>
+				<td>$tanggal_daftar</td>
 				<td>$gelombang</td>
 				<td>$sistem_kuliah</td>
 				<td>$jenis_kelamin</td>
 				<td>$nilai_lulusan</td>
 				<td>$tahun_lulus</td>
 				<td>$jenjang_pendidikan</td>
-				<td>$jurusan_sekolah</td>
-				<td>$tanggal_daftar</td>
-				<td>$prodi_diterima</td>
 				<td>$jenis_institusi</td>
+				<td>$jurusan_sekolah</td>
 				<td>$provinsi_institusi</td>
+				<td>$prodi_diterima</td>
 				<td>$kategori</td>
 				<td><div align='center'>
 					<a href='?mnu=knn&id=$id_pengujian'><img src='ypathicon/xls.png' title='Proses KNN $nama_pengujian'></a><br>
@@ -378,16 +378,16 @@ foreach ($arrc as $dc) {
 		$nama_pengujian = strip_tags($_POST["nama_pengujian"]);
 		$id_user = strip_tags($_SESSION["cid"]);
 		$jalur_pendaftaran = strip_tags($_POST["jalur_pendaftaran"]);
+		$tanggal_daftar = strip_tags($_POST["tanggal_daftar"]);
 		$gelombang = strip_tags($_POST["gelombang"]);
 		$sistem_kuliah = strip_tags($_POST["sistem_kuliah"]);
 		$jenis_kelamin = strip_tags($_POST["jenis_kelamin"]);
 		$nilai_lulusan = strip_tags($_POST["nilai_lulusan"]);
 		$jenjang_pendidikan = strip_tags($_POST["jenjang_pendidikan"]);
-		$jurusan_sekolah = strip_tags($_POST["jurusan_sekolah"]);
-		$tanggal_daftar = strip_tags($_POST["tanggal_daftar"]);
-		$prodi_diterima = strip_tags($_POST["prodi_diterima"]);
 		$jenis_institusi = strip_tags($_POST["jenis_institusi"]);
+		$jurusan_sekolah = strip_tags($_POST["jurusan_sekolah"]);
 		$provinsi_institusi = strip_tags($_POST["provinsi_institusi"]);
+		$prodi_diterima = strip_tags($_POST["prodi_diterima"]);
 		$jumlah = $jalur_pendaftaran + $gelombang + $sistem_kuliah + $jenis_kelamin + $nilai_lulusan + $tahun_lulus + $provinsi_institusi + $jenis_institusi + $jenjang_pendidikan + $jurusan_sekolah + $tanggal_daftar + $prodi_diterima;
 		$rekapitulasi = "";
 		$kategori = "";
@@ -399,17 +399,17 @@ foreach ($arrc as $dc) {
 	`nama_pengujian` ,
 	`id_user` ,
 	`jalur_pendaftaran` ,
+	`tanggal_daftar`,
 	`gelombang` ,
 	`sistem_kuliah` ,
 	`jenis_kelamin` ,
 	`nilai_lulusan` ,
 	`tahun_lulus`,
 	`jenjang_pendidikan`,
-	`jurusan_sekolah`,
-	`tanggal_daftar`,
-	`prodi_diterima`,
 	`jenis_institusi`,
+	`jurusan_sekolah`,
 	`provinsi_institusi`,
+	`prodi_diterima`,
 	`jumlah`,
 	`id_tahun`,
 	`rekapitulasi`,
@@ -419,17 +419,17 @@ foreach ($arrc as $dc) {
 	'$nama_pengujian',
 	'" . $_SESSION['cid'] . "', 
 	'$jalur_pendaftaran',
+	'$tanggal_daftar',
 	'$gelombang',
 	'$sistem_kuliah',
 	'$jenis_kelamin',
 	'$nilai_lulusan',
 	'$tahun_lulus',
 	'$jenjang_pendidikan',
-	'$jurusan_sekolah',
-	'$tanggal_daftar',
-	'$prodi_diterima',
 	'$jenis_institusi',
+	'$jurusan_sekolah',
 	'$provinsi_institusi',
+	'$prodi_diterima',
 	'$jumlah',
 	'$id_tahun',
 	'',
@@ -455,17 +455,17 @@ foreach ($arrc as $dc) {
 			$sql = "update `$tbpengujian` set 
 	`nama_pengujian`='$nama_pengujian',
 	`jalur_pendaftaran`='$jalur_pendaftaran' ,
+	`tanggal_daftar`='$tanggal_daftar',
 	`gelombang`='$gelombang',
 	`sistem_kuliah`='$sistem_kuliah',
 	`jenis_kelamin`='$jenis_kelamin',
 	`nilai_lulusan`='$nilai_lulusan',
 	`tahun_lulus`='$tahun_lulus',
 	`jenjang_pendidikan`='$jenjang_pendidikan',
-	`jurusan_sekolah`='$jurusan_sekolah',
-	`tanggal_daftar`='$tanggal_daftar',
-	`prodi_diterima`='$prodi_diterima',
 	`jenis_institusi`='$jenis_institusi',
+	`jurusan_sekolah`='$jurusan_sekolah',
 	`provinsi_institusi`='$provinsi_institusi',
+	`prodi_diterima`='$prodi_diterima',
 	`jumlah`='$jumlah',
 	`keterangan`='$keterangan'
 	 where `id_pengujian`='$id_pengujian0'";

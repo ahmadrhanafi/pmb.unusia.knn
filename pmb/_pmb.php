@@ -22,17 +22,17 @@ $gambar0 = "avatar.jpg";
 $id_tahun = "";
 $minat_jurusan = "";
 $jalur_pendaftaran = "";
+$tanggal_daftar = "";
 $gelombang = "";
 $sistem_kuliah = "";
 $jenis_kelamin = "";
 $nilai_lulusan = "";
 $tahun_lulus = "";
 $jenjang_pendidikan = "";
-$jurusan_sekolah = "";
-$tanggal_daftar = "";
-$prodi_diterima = "";
 $jenis_institusi = "";
+$jurusan_sekolah = "";
 $provinsi_institusi = "";
+$prodi_diterima = "";
 $jumlah = "";
 $kategori = "";
 $keterangan = "";
@@ -110,17 +110,17 @@ $keterangan = "";
 							$id_pmb = $d["id_pmb"];
 							$minat_jurusan = $d["minat_jurusan"];
 							$jalur_pendaftaran = $d["jalur_pendaftaran"];
+							$tanggal_daftar = $d["tanggal_daftar"];
 							$gelombang = $d["gelombang"];
 							$sistem_kuliah = $d["sistem_kuliah"];
 							$jenis_kelamin = $d["jenis_kelamin"];
 							$nilai_lulusan = $d["nilai_lulusan"];
 							$tahun_lulus = $d["tahun_lulus"];
 							$jenjang_pendidikan = $d["jenjang_pendidikan"];
-							$jurusan_sekolah = $d["jurusan_sekolah"];
-							$tanggal_daftar = $d["tanggal_daftar"];
-							$prodi_diterima = $d["prodi_diterima"];
 							$jenis_institusi = $d["jenis_institusi"];
+							$jurusan_sekolah = $d["jurusan_sekolah"];
 							$provinsi_institusi = $d["provinsi_institusi"];
+							$prodi_diterima = $d["prodi_diterima"];
 							$jumlah = $d["jumlah"];
 							$kategori = $d["kategori"];
 							$keterangan = $d["keterangan"];
@@ -134,17 +134,17 @@ $keterangan = "";
 				<td>$no</td>
 				<td><small>$minat_jurusan</small></td>
 				<td>$jalur_pendaftaran</td>
+				<td>$tanggal_daftar</td>
 				<td>$gelombang</td>
 				<td>$sistem_kuliah</td>
 				<td>$jenis_kelamin</td>
 				<td>$nilai_lulusan</td>
 				<td>$tahun_lulus</td>
 				<td>$jenjang_pendidikan</td>
-				<td>$jurusan_sekolah</td>
-				<td>$tanggal_daftar</td>
-				<td>$prodi_diterima</td>
 				<td>$jenis_institusi</td>
+				<td>$jurusan_sekolah</td>
 				<td>$provinsi_institusi</td>
+				<td>$prodi_diterima</td>
 				<td>$jumlah</td>
 				<td>$kategori</td>
 							</tr>";
